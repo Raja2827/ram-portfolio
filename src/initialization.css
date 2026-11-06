@@ -1,0 +1,187 @@
+.init-overlay {
+  z-index: 100;
+  background:
+    radial-gradient(ellipse at 50% 45%, #17141a 0%, #0b0c11 52%, #08090d 100%);
+  color: #f3f3f5;
+}
+
+.init-overlay:before {
+  opacity: .7;
+  background-size: 38px 38px;
+  mask-image: radial-gradient(ellipse, #000 8%, transparent 82%);
+}
+
+.init-skip {
+  top: 24px;
+  right: 28px;
+  z-index: 2;
+  border-color: #ffffff24;
+  color: #e5e3e7;
+}
+
+.init-skip:focus-visible {
+  outline: 2px solid #ff6a61;
+  outline-offset: 3px;
+}
+
+.init-panel {
+  display: flex;
+  width: min(660px, calc(100vw - 42px));
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 66px);
+}
+
+.init-logo {
+  position: relative;
+  display: grid;
+  width: clamp(90px, 16vw, 126px);
+  flex: 0 0 clamp(90px, 16vw, 126px);
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.init-logo strong {
+  z-index: 1;
+  color: #ff655b;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 3vw, 25px);
+  letter-spacing: -1px;
+  text-shadow: 0 0 26px #ff574e60;
+}
+
+.init-orbit {
+  position: absolute;
+  inset: 3px;
+  border: 1px solid #ff625a3b;
+  border-radius: 50%;
+}
+
+.init-orbit-a {
+  border-top: 2px solid #ff625a;
+  animation: init-spin 10s linear infinite;
+}
+
+.init-orbit-b {
+  inset: 16px;
+  border-right: 2px solid #ff625a;
+  border-style: dashed;
+  animation: init-spin 14s linear infinite reverse;
+}
+
+.init-terminal {
+  width: min(400px, calc(100vw - 160px));
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.init-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #ff796e;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+}
+
+.init-label i,
+.init-status i {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #ff655b;
+  box-shadow: 0 0 10px #ff655b;
+}
+
+.init-status {
+  display: flex;
+  min-height: 31px;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #ffffff0d;
+  color: #e4e2e8;
+  font-size: 11px;
+}
+
+.init-status>span {
+  color: #777580;
+  font-size: 8px;
+}
+
+.init-status b {
+  font-weight: 400;
+}
+
+.init-status i {
+  width: 4px;
+  height: 4px;
+  margin-left: auto;
+}
+
+.init-progress {
+  height: 2px;
+  margin-top: 15px;
+  overflow: hidden;
+  background: #ffffff17;
+}
+
+.init-progress-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #d13c35, #ff7565);
+  box-shadow: 0 0 9px #ff574e;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.init-build-label {
+  display: block;
+  margin-top: 8px;
+  color: #696772;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  text-align: right;
+}
+
+@keyframes init-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 560px) {
+  .init-panel {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .init-logo {
+    width: 83px;
+    flex-basis: 83px;
+  }
+
+  .init-logo strong {
+    font-size: 17px;
+  }
+
+  .init-orbit-b {
+    inset: 12px;
+  }
+
+  .init-terminal {
+    width: min(330px, calc(100vw - 52px));
+  }
+
+  .init-status {
+    min-height: 27px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .init-orbit-a,
+  .init-orbit-b {
+    animation: none;
+  }
+}
