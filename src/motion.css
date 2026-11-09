@@ -514,6 +514,21 @@
   display: inline;
 }
 
+/* Keep animated letters together; permit line breaks between complete words. */
+.character-reveal > .reveal-word {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-right: .25em;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: none;
+}
+
+.character-reveal > .reveal-word:last-child {
+  margin-right: 0;
+}
+
 .reveal-character {
   display: inline-block;
   white-space: pre;

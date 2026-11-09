@@ -1,0 +1,104 @@
+.positioning-section .section-heading h2 {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.positioning-section__intro {
+  color: #b3b4be;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.positioning-section__pillars,
+.positioning-section__services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.positioning-section__services {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.positioning-section__card {
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #292b35;
+  border-radius: 10px;
+  background: #15171e;
+  overflow-wrap: break-word;
+}
+
+.positioning-section__services .positioning-section__card {
+  grid-column: span 2;
+}
+
+.positioning-section__services .positioning-section__card--primary {
+  grid-column: span 3;
+  border-top: 2px solid #ff554d;
+}
+
+.positioning-section__card > svg,
+.positioning-section__label {
+  color: #ff554d;
+}
+
+.positioning-section__label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.positioning-section__card h3 {
+  margin: 18px 0 10px;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.positioning-section__card p {
+  margin: 0;
+  color: #a7a9b2;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-actions .positioning-project-link {
+  align-self: center;
+  padding: 12px 0;
+  color: #ff7169;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-actions a:focus-visible {
+  outline: 2px solid #ff7169;
+  outline-offset: 4px;
+}
+
+@media (max-width: 950px) {
+  .positioning-section__pillars {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .positioning-section__services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .positioning-section__services .positioning-section__card {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .positioning-section__services {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .positioning-section__pillars,
+  .positioning-section__services {
+    gap: 18px;
+  }
+  .positioning-section__card {
+    padding: 24px;
+  }
+}
