@@ -1,0 +1,46 @@
+.project-enquiry {
+  margin-top: 40px;
+  padding: 28px;
+  border: 1px solid #292b35;
+  border-radius: 10px;
+  background: #101217;
+  color: #f3f3f5;
+  min-width: 0;
+}
+.project-enquiry h3 { font-size: 24px; margin-bottom: 12px; }
+.project-enquiry__intro { color: #b3b4be; font-size: 15px; line-height: 1.8; }
+.project-enquiry fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.project-enquiry__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.project-enquiry__field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.project-enquiry__wide { grid-column: 1 / -1; }
+.project-enquiry label { font-size: 14px; font-weight: 600; }
+.project-enquiry input,
+.project-enquiry select,
+.project-enquiry textarea {
+  width: 100%; min-width: 0; min-height: 46px; padding: 12px;
+  border: 1px solid #52545f; border-radius: 7px;
+  background: #15171e; color: #f3f3f5; font: inherit; font-size: 16px;
+}
+.project-enquiry textarea { resize: vertical; }
+.project-enquiry input::placeholder,
+.project-enquiry textarea::placeholder { color: #a7a9b2; opacity: 1; }
+body.has-custom-cursor .project-enquiry input,
+body.has-custom-cursor .project-enquiry textarea { cursor: text !important; }
+body.has-custom-cursor .project-enquiry select,
+body.has-custom-cursor .project-enquiry button,
+body.has-custom-cursor .project-enquiry a { cursor: pointer !important; }
+.project-enquiry :is(input, select, textarea, button, a):focus-visible { outline: 2px solid #ff7169; outline-offset: 4px; }
+.project-enquiry [aria-invalid="true"] { border-color: #ff7169; }
+.project-enquiry__error { color: #ff9b93; font-size: 14px; }
+.project-enquiry__hint { color: #a7a9b2; font-size: 13px; line-height: 1.7; margin-bottom: 0; }
+.project-enquiry__submit { margin-top: 26px; border: 0; color: #fff; min-height: 46px; }
+.project-enquiry fieldset:disabled { opacity: .7; }
+.project-enquiry__feedback { margin: 20px 0 12px; line-height: 1.7; overflow-wrap: anywhere; }
+.project-enquiry__feedback--error { color: #ff9b93; }
+.project-enquiry__fallback { color: #ff9b93; text-decoration: underline; overflow-wrap: anywhere; display: inline-block; margin-bottom: 16px; }
+.project-enquiry .project-enquiry__honeypot { display: none; }
+@media (max-width: 700px) {
+  .project-enquiry { padding: 20px; }
+  .project-enquiry__grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .project-enquiry__submit { width: 100%; justify-content: center; }
+}

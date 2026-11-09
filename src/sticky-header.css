@@ -37,10 +37,33 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 13px;
-  border: 1px solid #a13c3c;
-  border-radius: 7px;
-  color: #ff655c;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #b9bbc4;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.nav .desktop-contact,
+.nav nav .mobile-contact {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #ff554d;
+  font-weight: 700;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.nav .desktop-contact:hover,
+.nav nav .mobile-contact:hover {
+  color: #ff554d;
+  text-decoration-line: underline;
 }
 
 .nav nav .mobile-contact {
@@ -65,11 +88,12 @@
   outline-offset: 4px;
 }
 
-.section {
+.section,
+#contact {
   scroll-margin-top: 100px;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   .nav {
     padding-right: 28px;
     padding-left: 28px;
@@ -92,6 +116,8 @@
     align-items: stretch;
     gap: 17px;
     box-shadow: 0 18px 34px #0007;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
   }
 
   .nav nav.nav-open {
